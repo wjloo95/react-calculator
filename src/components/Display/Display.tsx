@@ -5,7 +5,11 @@ interface IProps {
 }
 
 const Display = ({ displayValue }: IProps) => {
-  return <div className="display-container"></div>;
+  return (
+    <div className="display-container">
+      <p className="display-value">{displayValue}</p>
+    </div>
+  );
 };
 
 export default Display;
