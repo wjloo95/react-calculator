@@ -1,7 +1,25 @@
 /* CSS Variables */
 
 :root {
+  /* Background Colors */
+  --calculator-background-color: #696969;
+
+  /* Font */
   --main-font: 'Orbitron', sans-serif;
+
+  /* Calculator Dimensions */
+  --calculator-height: 72%;
+  --calculator-width: 36%;
+}
+
+/* Media Query for tablets/smaller screens */
+
+@media screen and (max-width: 1024px) {
+  :root {
+    /* Calculatr Dimensions */
+    --calculator-height: 100%;
+    --calculator-width: 100%;
+  }
 }
 
 /* CSS Reset */

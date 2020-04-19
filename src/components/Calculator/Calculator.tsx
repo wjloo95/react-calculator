@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Calculator.css';
 
 interface Props {}
 interface State {
