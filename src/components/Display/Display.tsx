@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Display.css';
 interface IProps {
   displayValue: string;
 }
