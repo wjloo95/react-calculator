@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Calculator.css';
 
-interface Props {}
-interface State {
+interface IProps {}
+interface IState {
   displayValue?: string;
   numbers?: number[];
   operators?: string[];
@@ -17,8 +17,8 @@ const initialState = {
   selectedOperator: '',
   storedValue: '',
 };
-export default class Calculator extends Component<Props, State> {
-  constructor(props: Props) {
+export default class Calculator extends Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
     this.state = initialState;
   }
