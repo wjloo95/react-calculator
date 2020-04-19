@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import Calculator from './Calculator';
 import Display from '../Display/Display';
@@ -14,8 +14,10 @@ describe('Calculator', () => {
   });
 
   it('should render the Display Component', () => {
-    expect(wrapper)
-      .containsMatchingElement(<Display />)
-      .toEqual(true);
+    expect(
+      wrapper.containsMatchingElement(
+        <Display displayValue={wrapper.instance().state.displayValue} />
+      )
+    ).toEqual(true);
   });
 });

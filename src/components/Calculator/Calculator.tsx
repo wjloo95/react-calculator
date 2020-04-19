@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Calculator.css';
 
+import Display from '../Display/Display';
+
 interface IProps {}
 interface IState {
   displayValue?: string;
@@ -33,6 +35,11 @@ export default class Calculator extends Component<IProps, IState> {
   };
 
   render = () => {
-    return <div className="calculator-container" />;
+    const { displayValue } = this.state;
+    return (
+      <div className="calculator-container">
+        <Display displayValue={displayValue} />
+      </div>
+    );
   };
 }
