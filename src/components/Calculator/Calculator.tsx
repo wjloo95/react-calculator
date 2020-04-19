@@ -18,10 +18,8 @@ const initialState = {
   storedValue: '',
 };
 export default class Calculator extends Component<IProps, IState> {
-  constructor(props: IProps) {
-    super(props);
-    this.state = initialState;
-  }
+  readonly state = initialState;
+
   callOperator = () => {
     console.log('call operation');
   };
