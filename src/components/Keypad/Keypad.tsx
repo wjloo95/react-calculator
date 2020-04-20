@@ -2,7 +2,7 @@ import React from 'react';
 
 interface IProps {
   callOperator(): void;
-  numbers: number[];
+  numbers: string[];
   operators: string[];
   setOperator(): void;
   updateDisplay(): void;
@@ -15,6 +15,11 @@ const Keypad = ({
   setOperator,
   updateDisplay,
 }: IProps) => {
-  return <div className="keypad-container"></div>;
+  const numberKeys = numbers.map((number) => <p key={number}>{number}</p>);
+  return (
+    <div className="keypad-container">
+      <div className="numbers-container">{numberKeys}</div>
+    </div>
+  );
 };
 export default Keypad;

@@ -7,7 +7,7 @@ import Keypad from '../Keypad/Keypad';
 interface IProps {}
 interface IState {
   displayValue?: string;
-  numbers?: number[];
+  numbers?: string[];
   operators?: string[];
   selectedOperator?: string;
   storedValue?: string;
