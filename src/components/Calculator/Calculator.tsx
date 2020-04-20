@@ -32,7 +32,21 @@ export default class Calculator extends Component<IProps, IState> {
   };
 
   updateDisplay = (value: any) => {
-    console.log('update display');
+    let { displayValue } = this.state;
+    if (value === '.' && displayValue.includes('.')) {
+      value = '';
+    }
+
+    if (value === 'ce') {
+      displayValue = displayValue.substr(0, displayValue.length - 1);
+      if (displayValue === '') {
+        displayValue = '0';
+      }
+    } else {
+      displayValue = displayValue === '0' ? value : displayValue + value;
+    }
+
+    this.setState({ displayValue });
   };
 
   render = () => {
