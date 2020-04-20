@@ -1,4 +1,7 @@
 import React from 'react';
+import './Keypad.css';
+
+import Key from '../Key/Key';
 
 interface IProps {
   callOperator(): void;
@@ -24,6 +27,7 @@ const Keypad = ({
     <div className="keypad-container">
       <div className="numbers-container">{numberKeys}</div>
       <div className="operators-container">{operatorKeys}</div>
+      <Key keyAction={callOperator} keyType="" keyValue="" />
     </div>
   );
 };
