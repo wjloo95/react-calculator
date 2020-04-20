@@ -99,11 +99,11 @@ describe('mounted Calculator', () => {
       expect(wrapper.state('displayValue')).toEqual('0');
     });
 
-    it('should remove last char of displayValue', () => {
+    it('should remove all chars of displayValue', () => {
       wrapper.instance().updateDisplay('5');
       wrapper.instance().updateDisplay('0');
       wrapper.instance().updateDisplay('ce');
-      expect(wrapper.state('displayValue')).toEqual('5');
+      expect(wrapper.state('displayValue')).toEqual('0');
     });
 
     it('should prevent multiple instances of . in displayValue', () => {
