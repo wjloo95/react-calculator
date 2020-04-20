@@ -39,7 +39,9 @@ const Keypad = ({
     <div className="keypad-container">
       <div className="numbers-container">{numberKeys}</div>
       <div className="operators-container">{operatorKeys}</div>
-      <Key keyAction={callOperator} keyType="submit-key" keyValue="=" />
+      <div className="submit-container">
+        <Key keyAction={callOperator} keyType="submit-key" keyValue="=" />
+      </div>
     </div>
   );
 };

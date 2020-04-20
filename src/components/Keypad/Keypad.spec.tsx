@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import Keypad from './Keypad';
+import Key from '../Key/Key';
 
 describe('Keypad', () => {
   let wrapper: any;
@@ -20,16 +21,6 @@ describe('Keypad', () => {
 
   it('should render 4 divs', () => {
     expect(wrapper.find('div').length).toEqual(4);
-  });
-
-  it('should render the values of numbers', () => {
-    wrapper.setProps({ numbers: ['0', '1', '2'] });
-    expect(wrapper.find('.numbers-container').text()).toEqual('012');
-  });
-
-  it('should render the values of operators', () => {
-    wrapper.setProps({ operators: ['+', '-', '*', '/'] });
-    expect(wrapper.find('.operators-container').text()).toEqual('+-*/');
   });
 
   it('should render an instance of the Key component for each index of numbers, operators, and the submit Key', () => {
