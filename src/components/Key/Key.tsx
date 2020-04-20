@@ -6,7 +6,11 @@ interface IProps {
   keyValue: string;
 }
 const Key = ({ keyAction, keyType, keyValue }: IProps) => {
-  return <div className="key-container"></div>;
+  return (
+    <div className="key-container">
+      <p className="key-value">{keyValue}</p>
+    </div>
+  );
 };
 
 export default Key;
