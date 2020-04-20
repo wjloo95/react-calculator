@@ -23,15 +23,15 @@ const initialState = {
 export default class Calculator extends Component<IProps, IState> {
   readonly state = initialState;
 
-  callOperator = () => {
+  callOperator = (value: any): void => {
     console.log('call operation');
   };
 
-  setOperator = () => {
+  setOperator = (value: any) => {
     console.log('set operation');
   };
 
-  updateDisplay = () => {
+  updateDisplay = (value: any) => {
     console.log('update display');
   };
 

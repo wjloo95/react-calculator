@@ -4,11 +4,11 @@ import './Keypad.css';
 import Key from '../Key/Key';
 
 interface IProps {
-  callOperator(): void;
+  callOperator(value: any): void;
   numbers: string[];
   operators: string[];
-  setOperator(): void;
-  updateDisplay(): void;
+  setOperator(value: any): void;
+  updateDisplay(value: any): void;
 }
 
 const Keypad = ({
