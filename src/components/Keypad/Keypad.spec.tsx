@@ -19,6 +19,10 @@ describe('Keypad', () => {
     );
   });
 
+  it('should render correctly', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('should render 4 divs', () => {
     expect(wrapper.find('div').length).toEqual(4);
   });
