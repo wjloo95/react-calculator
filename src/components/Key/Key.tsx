@@ -1,4 +1,5 @@
 import React from 'react';
+import './Key.css';
 
 interface IProps {
   keyAction(): void;
