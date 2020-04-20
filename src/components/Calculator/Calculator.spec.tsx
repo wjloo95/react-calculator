@@ -117,4 +117,37 @@ describe('mounted Calculator', () => {
       expect(wrapper.state('displayValue')).toEqual('0');
     });
   });
+
+  describe('setOperator', () => {
+    let wrapper: any;
+
+    beforeEach(() => (wrapper = shallow(<Calculator />)));
+
+    it('should update the value of selectedOperator', () => {
+      wrapper.instance().setOperator('+');
+      expect(wrapper.state('selectedOperator')).toEqual('+');
+      wrapper.instance().setOperator('/');
+      expect(wrapper.state('selectedOperator')).toEqual('/');
+    });
+
+    it('should update the value of storedValue to the value of displayValue', () => {
+      wrapper.setState({ displayValue: '5' });
+      wrapper.instance().setOperator('+');
+      expect(wrapper.state('storedValue')).toEqual('5');
+    });
+
+    it('should update the value of displayValue to 0', () => {
+      wrapper.setState({ displayValue: '5' });
+      wrapper.instance().setOperator('+');
+      expect(wrapper.state('displayValue')).toEqual('0');
+    });
+
+    it('should not treat selectedOperator as an empty string', () => {
+      wrapper.setState({ displayValue: '5' });
+      wrapper.instance().setOperator('+');
+      expect(wrapper.state('storedValue')).toEqual('5');
+      wrapper.instance().setOperator('-');
+      expect(wrapper.state('storedValue')).toEqual('5');
+    });
+  });
 });
