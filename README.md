@@ -1,4 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Built based on this [TDD tutorial(https://testdriven.io/blog/tdd-with-react-jest-and-enzyme-part-one/)]
 
 ## Available Scripts
 
