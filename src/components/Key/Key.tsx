@@ -8,7 +8,7 @@ interface IProps {
 }
 const Key = ({ keyAction, keyType, keyValue }: IProps) => {
   return (
-    <div className="key-container">
+    <div className={`key-container ${keyType}`}>
       <p className="key-value">{keyValue}</p>
     </div>
   );
