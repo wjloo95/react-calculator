@@ -18,16 +18,28 @@ const Keypad = ({
   setOperator,
   updateDisplay,
 }: IProps) => {
-  const numberKeys = numbers.map((number) => <p key={number}>{number}</p>);
+  const numberKeys = numbers.map((number) => (
+    <Key
+      key={number}
+      keyAction={updateDisplay}
+      keyType="number-key"
+      keyValue={number}
+    />
+  ));
   const operatorKeys = operators.map((operator) => (
-    <p key={operator}>{operator}</p>
+    <Key
+      key={operator}
+      keyAction={setOperator}
+      keyType="operator-key"
+      keyValue={operator}
+    />
   ));
 
   return (
     <div className="keypad-container">
       <div className="numbers-container">{numberKeys}</div>
       <div className="operators-container">{operatorKeys}</div>
-      <Key keyAction={callOperator} keyType="" keyValue="" />
+      <Key keyAction={callOperator} keyType="submit-key" keyValue="=" />
     </div>
   );
 };
