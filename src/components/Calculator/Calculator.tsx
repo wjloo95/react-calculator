@@ -28,7 +28,15 @@ export default class Calculator extends Component<IProps, IState> {
   };
 
   setOperator = (value: any) => {
-    console.log('set operation');
+    let { displayValue, selectedOperator, storedValue } = this.state;
+
+    if (selectedOperator === '') {
+      storedValue = displayValue;
+      displayValue = '0';
+    }
+    selectedOperator = value;
+
+    this.setState({ displayValue, selectedOperator, storedValue });
   };
 
   updateDisplay = (value: any) => {
