@@ -24,7 +24,44 @@ export default class Calculator extends Component<IProps, IState> {
   readonly state = initialState;
 
   callOperator = (value: any): void => {
-    console.log('call operation');
+    let { displayValue, selectedOperator, storedValue } = this.state;
+
+    const updateStoredValue = displayValue;
+
+    let tempDisplayValue = parseInt(displayValue, 10);
+    let tempStoredValue = parseInt(storedValue, 10);
+
+    switch (selectedOperator) {
+      case '+':
+        tempDisplayValue = tempStoredValue + tempDisplayValue;
+        break;
+      case '-':
+        tempDisplayValue = tempStoredValue - tempDisplayValue;
+        break;
+      case 'x':
+        tempDisplayValue = tempStoredValue * tempDisplayValue;
+        break;
+      case '/':
+        tempDisplayValue = tempStoredValue / tempDisplayValue;
+        break;
+      default:
+        // set tempDisplayValue to zero if no case matches
+        tempDisplayValue = 0;
+    }
+
+    displayValue = tempDisplayValue.toString();
+
+    selectedOperator = '';
+
+    if (displayValue === 'NaN' || displayValue === 'Infinity') {
+      displayValue = '0';
+    }
+
+    this.setState({
+      displayValue,
+      selectedOperator,
+      storedValue: updateStoredValue,
+    });
   };
 
   setOperator = (value: any) => {
